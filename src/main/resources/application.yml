@@ -1,0 +1,3 @@
+server:
+  servlet:
+    context-path: /funcionario-f1rst/api
