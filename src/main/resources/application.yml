@@ -1,3 +1,7 @@
 server:
   servlet:
     context-path: /funcionario-f1rst/api
+    
+springdoc:
+  swagger-ui:
+    path: /swagger

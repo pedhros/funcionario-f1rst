@@ -3,7 +3,10 @@ package br.com.f1rst.funcionario_f1rst.funcionario.domain;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -16,6 +19,8 @@ import lombok.NoArgsConstructor;
 @Entity
 public class funcionario {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id", updatable = false, unique = true, nullable = false)
 	private UUID idFuncionario;
 	@NotBlank
 	private String nomeCompleto;
@@ -36,7 +41,6 @@ public class funcionario {
 	
 	public funcionario(@NotBlank String nomeCompleto, @NotBlank @Email String email, @NotBlank String designacao,
 			@NotBlank float salario, @NotBlank String telefone, @NotBlank String endereco) {
-		this.idFuncionario = UUID.randomUUID();
 		this.nomeCompleto = nomeCompleto;
 		this.email = email;
 		this.designacao = designacao;
