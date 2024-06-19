@@ -3,6 +3,7 @@ package br.com.f1rst.funcionario_f1rst.funcionario.domain;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import br.com.f1rst.funcionario_f1rst.funcionario.application.api.FuncionarioRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,7 +18,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
 @Entity
-public class funcionario {
+public class Funcionario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", updatable = false, unique = true, nullable = false)
@@ -39,16 +40,14 @@ public class funcionario {
 	private LocalDateTime dataHoraDoCadastro;
 	private LocalDateTime dataHoraDaUltimaAlteracao;
 	
-	public funcionario(@NotBlank String nomeCompleto, @NotBlank @Email String email, @NotBlank String designacao,
-			@NotBlank @NotBlank String salario, @NotBlank String telefone, @NotBlank String endereco) {
-		this.nomeCompleto = nomeCompleto;
-		this.email = email;
-		this.designacao = designacao;
-		this.salario = salario;
-		this.telefone = telefone;
-		this.endereco = endereco;
+	public Funcionario(FuncionarioRequest funcionarioRequest) {
+		this.nomeCompleto = funcionarioRequest.getNomeCompleto();
+		this.email = funcionarioRequest.getEmail();
+		this.designacao = funcionarioRequest.getDesignacao();
+		this.salario = funcionarioRequest.getSalario();
+		this.telefone = funcionarioRequest.getTelefone();
+		this.endereco = funcionarioRequest.getEndereco();
 		this.dataHoraDoCadastro = LocalDateTime.now();
+	
 	}
-	
-	
 }
