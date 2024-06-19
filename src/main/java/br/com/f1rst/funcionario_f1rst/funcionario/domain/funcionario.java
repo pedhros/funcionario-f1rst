@@ -30,7 +30,7 @@ public class funcionario {
 	@NotBlank
 	private String designacao;
 	@NotBlank
-	private float salario;
+	private String salario;
 	@NotBlank
 	private String telefone;
 	@NotBlank
@@ -40,7 +40,7 @@ public class funcionario {
 	private LocalDateTime dataHoraDaUltimaAlteracao;
 	
 	public funcionario(@NotBlank String nomeCompleto, @NotBlank @Email String email, @NotBlank String designacao,
-			@NotBlank float salario, @NotBlank String telefone, @NotBlank String endereco) {
+			@NotBlank @NotBlank String salario, @NotBlank String telefone, @NotBlank String endereco) {
 		this.nomeCompleto = nomeCompleto;
 		this.email = email;
 		this.designacao = designacao;

@@ -7,10 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/v1/funcionario")
 public interface FuncionarioAPI {
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-	FuncionarioResponse postFuncionario(@RequestBody FuncionarioRequest funcionarioRequest);
+	FuncionarioResponse postFuncionario(@Valid @RequestBody FuncionarioRequest funcionarioRequest);
 }

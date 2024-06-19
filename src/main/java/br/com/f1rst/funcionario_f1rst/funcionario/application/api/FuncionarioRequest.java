@@ -14,7 +14,7 @@ public class FuncionarioRequest {
 	@NotBlank
 	private String designacao;
 	@NotBlank
-	private float salario;
+	private String salario;
 	@NotBlank
 	private String telefone;
 	@NotBlank
