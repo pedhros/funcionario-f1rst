@@ -1,5 +1,7 @@
 package br.com.f1rst.funcionario_f1rst.funcionario.infra;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import br.com.f1rst.funcionario_f1rst.funcionario.application.repository.FuncionarioRepository;
@@ -19,6 +21,13 @@ public class FuncionarioInfraRepository implements FuncionarioRepository {
 		funcionarioSpringDataJPARespository.save(funcionario);
 		log.info("[finaliza] FuncionarioInfraRepository - salva");
 		return funcionario;
+	}
+
+	@Override
+	public List<Funcionario> buscaTodosFuncionarios() {
+		log.info("[inicia] FuncionarioInfraRepository - buscaTodosFuncionarios");
+		log.info("[finaliza] FuncionarioInfraRepository - buscaTodosFuncionarios");
+		return null;
 	}
 
 }
