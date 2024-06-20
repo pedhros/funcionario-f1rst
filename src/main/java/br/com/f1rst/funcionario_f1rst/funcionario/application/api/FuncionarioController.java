@@ -1,5 +1,7 @@
 package br.com.f1rst.funcionario_f1rst.funcionario.application.api;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.f1rst.funcionario_f1rst.funcionario.application.service.FuncionarioService;
@@ -18,5 +20,12 @@ public class FuncionarioController implements FuncionarioAPI {
 		FuncionarioResponse funcionarioCriado = funcionarioService.criaFuncionario(funcionarioRequest);
 		log.info("[finaliza] FuncionarioController - postFuncionario");
 		return funcionarioCriado;
+	}
+
+	@Override
+	public List<FuncionarioListResponse> getTodosFuncionarios() {
+		log.info("[inicia] getTodosFuncionarios - postFuncionario");
+		log.info("[finaliza] getTodosFuncionarios - postFuncionario");
+		return null;
 	}
 }
