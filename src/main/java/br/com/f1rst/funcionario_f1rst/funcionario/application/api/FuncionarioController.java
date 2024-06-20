@@ -24,8 +24,9 @@ public class FuncionarioController implements FuncionarioAPI {
 
 	@Override
 	public List<FuncionarioListResponse> getTodosFuncionarios() {
-		log.info("[inicia] getTodosFuncionarios - postFuncionario");
-		log.info("[finaliza] getTodosFuncionarios - postFuncionario");
-		return null;
+		log.info("[inicia] FuncionarioController - getTodosFuncionarios");
+		List<FuncionarioListResponse> funcionarios = funcionarioService.buscaTodosFuncionarios();
+		log.info("[finaliza] FuncionarioController - getTodosFuncionarios");
+		return funcionarios;
 	}
 }

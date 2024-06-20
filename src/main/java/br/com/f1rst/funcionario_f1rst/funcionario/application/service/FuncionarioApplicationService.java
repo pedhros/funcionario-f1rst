@@ -1,7 +1,10 @@
 package br.com.f1rst.funcionario_f1rst.funcionario.application.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
+import br.com.f1rst.funcionario_f1rst.funcionario.application.api.FuncionarioListResponse;
 import br.com.f1rst.funcionario_f1rst.funcionario.application.api.FuncionarioRequest;
 import br.com.f1rst.funcionario_f1rst.funcionario.application.api.FuncionarioResponse;
 import br.com.f1rst.funcionario_f1rst.funcionario.application.repository.FuncionarioRepository;
@@ -23,5 +26,12 @@ public class FuncionarioApplicationService implements FuncionarioService {
 		return FuncionarioResponse.builder()
 				.idFuncionario(funcionario.getIdFuncionario())
 				.build();
+	}
+
+	@Override
+	public List<FuncionarioListResponse> buscaTodosFuncionarios() {
+		log.info("[inicia] FuncionarioApplicationService - buscaTodosFuncionarios");
+		log.info("[finaliza] FuncionarioApplicationService - buscaTodosFuncionarios");
+		return null;
 	}
 }
