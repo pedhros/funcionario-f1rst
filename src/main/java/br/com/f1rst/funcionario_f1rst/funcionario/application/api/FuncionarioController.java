@@ -35,8 +35,8 @@ public class FuncionarioController implements FuncionarioAPI {
 	public FuncionarioDetalhadoResponse getFuncionariosAtravesId(UUID idFuncionario) {
 		log.info("[inicia] FuncionarioController - getFuncionariosAtravesId");
 		log.info("[idFuncionario] {}", idFuncionario);
+		FuncionarioDetalhadoResponse funcionarioDetalhado = funcionarioService.buscaFuncionariosAtravesId(idFuncionario);
 		log.info("[finaliza] FuncionarioController - getFuncionariosAtravesId");
-		return null;
+		return funcionarioDetalhado;
 	}
-
 }
