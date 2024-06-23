@@ -1,6 +1,7 @@
 package br.com.f1rst.funcionario_f1rst.funcionario.application.api;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,4 +30,13 @@ public class FuncionarioController implements FuncionarioAPI {
 		log.info("[finaliza] FuncionarioController - getTodosFuncionarios");
 		return funcionarios;
 	}
+
+	@Override
+	public FuncionarioDetalhadoResponse getFuncionariosAtravesId(UUID idFuncionario) {
+		log.info("[inicia] FuncionarioController - getFuncionariosAtravesId");
+		log.info("[idFuncionario] {}", idFuncionario);
+		log.info("[finaliza] FuncionarioController - getFuncionariosAtravesId");
+		return null;
+	}
+
 }

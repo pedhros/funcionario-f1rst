@@ -1,9 +1,11 @@
 package br.com.f1rst.funcionario_f1rst.funcionario.application.api;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,4 +24,8 @@ public interface FuncionarioAPI {
 	@GetMapping
 	@ResponseStatus(code = HttpStatus.OK)
 	List<FuncionarioListResponse> getTodosFuncionarios();
+	
+	@GetMapping(value = "/{idFuncionario}")
+	@ResponseStatus(code = HttpStatus.OK)
+	FuncionarioDetalhadoResponse getFuncionariosAtravesId(@PathVariable UUID idFuncionario);
 }
