@@ -1,6 +1,7 @@
 package br.com.f1rst.funcionario_f1rst.funcionario.infra;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.stereotype.Repository;
 
@@ -31,4 +32,12 @@ public class FuncionarioInfraRepository implements FuncionarioRepository {
 		return todosFuncionarios;
 	}
 
+	@Override
+	public Funcionario buscaFuncionariosAtravesId(UUID idFuncionario) {
+		log.info("[inicia] FuncionarioInfraRepository - buscaFuncionariosAtravesId");
+		Funcionario funcionario = funcionarioSpringDataJPARespository.findById(idFuncionario)
+				.orElseThrow(() -> new RuntimeException("Funcionario não encontrado!"));
+		log.info("[finaliza] FuncionarioInfraRepository - buscaFuncionariosAtravesId");
+		return funcionario;
+	}
 }
