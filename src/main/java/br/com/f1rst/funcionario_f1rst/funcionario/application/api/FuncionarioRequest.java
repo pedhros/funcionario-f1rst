@@ -19,5 +19,4 @@ public class FuncionarioRequest {
 	private String telefone;
 	@NotBlank
 	private String endereco;
-
 }
