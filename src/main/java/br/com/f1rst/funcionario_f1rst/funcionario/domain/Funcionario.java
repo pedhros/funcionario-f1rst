@@ -27,6 +27,7 @@ public class Funcionario {
 	private String nomeCompleto;
 	@NotBlank
 	@Email
+	@Column(unique = true)
 	private String email;
 	@NotBlank
 	private String designacao;
