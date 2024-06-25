@@ -9,4 +9,5 @@ public interface FuncionarioRepository {
 	Funcionario salva(Funcionario funcionario);
 	List<Funcionario> buscaTodosFuncionarios();
 	Funcionario buscaFuncionariosAtravesId(UUID idFuncionario);
+	void deletaFuncionario(Funcionario funcionario);
 }
