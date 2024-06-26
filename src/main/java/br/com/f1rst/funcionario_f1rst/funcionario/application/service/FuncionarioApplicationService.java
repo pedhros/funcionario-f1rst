@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import br.com.f1rst.funcionario_f1rst.funcionario.application.api.FuncionarioAlteracaoRequest;
 import br.com.f1rst.funcionario_f1rst.funcionario.application.api.FuncionarioDetalhadoResponse;
 import br.com.f1rst.funcionario_f1rst.funcionario.application.api.FuncionarioListResponse;
 import br.com.f1rst.funcionario_f1rst.funcionario.application.api.FuncionarioRequest;
@@ -52,5 +53,14 @@ public class FuncionarioApplicationService implements FuncionarioService {
 		Funcionario funcionario = funcionarioRepository.buscaFuncionariosAtravesId(idFuncionario);
 		funcionarioRepository.deletaFuncionario(funcionario);
 		log.info("[finaliza] FuncionarioApplicationService - deletaFuncionariosAtravesId");
+	}
+
+	@Override
+	public void patchAlteraFuncionario(UUID idFuncionario, FuncionarioAlteracaoRequest funcionarioAlteracaoRequest) {
+		log.info("[inicia] FuncionarioApplicationService - patchAlteraFuncionario");
+		Funcionario funcionario = funcionarioRepository.buscaFuncionariosAtravesId(idFuncionario);
+		funcionario.altera(funcionarioAlteracaoRequest);
+		funcionarioRepository.salva(funcionario);
+		log.info("[finaliza] FuncionarioApplicationService - patchAlteraFuncionario");
 	}
 }

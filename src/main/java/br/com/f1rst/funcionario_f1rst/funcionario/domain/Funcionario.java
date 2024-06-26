@@ -3,6 +3,7 @@ package br.com.f1rst.funcionario_f1rst.funcionario.domain;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import br.com.f1rst.funcionario_f1rst.funcionario.application.api.FuncionarioAlteracaoRequest;
 import br.com.f1rst.funcionario_f1rst.funcionario.application.api.FuncionarioRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -49,5 +50,14 @@ public class Funcionario {
 		this.telefone = funcionarioRequest.getTelefone();
 		this.endereco = funcionarioRequest.getEndereco();
 		this.dataHoraDoCadastro = LocalDateTime.now();
+	}
+
+	public void altera(FuncionarioAlteracaoRequest funcionarioRequest) {
+		this.nomeCompleto = funcionarioRequest.getNomeCompleto();
+		this.designacao = funcionarioRequest.getDesignacao();
+		this.salario = funcionarioRequest.getSalario();
+		this.telefone = funcionarioRequest.getTelefone();
+		this.endereco = funcionarioRequest.getEndereco();
+		this.dataHoraDaUltimaAlteracao = LocalDateTime.now();
 	}
 }

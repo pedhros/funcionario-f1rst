@@ -3,6 +3,7 @@ package br.com.f1rst.funcionario_f1rst.funcionario.application.service;
 import java.util.List;
 import java.util.UUID;
 
+import br.com.f1rst.funcionario_f1rst.funcionario.application.api.FuncionarioAlteracaoRequest;
 import br.com.f1rst.funcionario_f1rst.funcionario.application.api.FuncionarioDetalhadoResponse;
 import br.com.f1rst.funcionario_f1rst.funcionario.application.api.FuncionarioListResponse;
 import br.com.f1rst.funcionario_f1rst.funcionario.application.api.FuncionarioRequest;
@@ -13,4 +14,5 @@ public interface FuncionarioService {
 	List<FuncionarioListResponse> buscaTodosFuncionarios();
 	FuncionarioDetalhadoResponse buscaFuncionariosAtravesId(UUID idFuncionario);
 	void deletaFuncionariosAtravesId(UUID idFuncionario);
+	void patchAlteraFuncionario(UUID idFuncionario, FuncionarioAlteracaoRequest funcionarioAlteracaoRequest);
 }

@@ -3,9 +3,8 @@ package br.com.f1rst.funcionario_f1rst.funcionario.application.api;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Value;
 
+@Value
 public class FuncionarioAlteracaoRequest {
-	@Value
-	public class FuncionarioRequest {
 		@NotBlank
 		private String nomeCompleto;
 		@NotBlank
@@ -17,5 +16,3 @@ public class FuncionarioAlteracaoRequest {
 		@NotBlank
 		private String endereco;
 	}
-
-}
