@@ -12,6 +12,7 @@ public class FuncionarioDetalhadoResponse {
 	private String nomeCompleto;
 	private String designacao;
 	private String email;
+	private String salario;
 	private String telefone;
 	private LocalDateTime dataHoraDoCadastro;
 
@@ -20,6 +21,7 @@ public class FuncionarioDetalhadoResponse {
 		this.nomeCompleto = funcionario.getNomeCompleto();
 		this.designacao = funcionario.getDesignacao();
 		this.email = funcionario.getEmail();
+		this.salario = funcionario.getSalario();
 		this.telefone = funcionario.getTelefone();
 		this.dataHoraDoCadastro = funcionario.getDataHoraDaUltimaAlteracao();
 	}
