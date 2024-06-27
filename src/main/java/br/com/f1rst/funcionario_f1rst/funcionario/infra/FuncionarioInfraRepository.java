@@ -3,6 +3,7 @@ package br.com.f1rst.funcionario_f1rst.funcionario.infra;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
@@ -21,7 +22,12 @@ public class FuncionarioInfraRepository implements FuncionarioRepository {
 	@Override
 	public Funcionario salva(Funcionario funcionario) {
 		log.info("[inicia] FuncionarioInfraRepository - salva");
-		funcionarioSpringDataJPARespository.save(funcionario);
+		try {
+			funcionarioSpringDataJPARespository.save(funcionario);	
+		} catch (DataIntegrityViolationException e) {
+			throw APIException.build(HttpStatus.BAD_REQUEST, "O Email informado já está em uso!", e);
+		}
+		
 		log.info("[finaliza] FuncionarioInfraRepository - salva");
 		return funcionario;
 	}

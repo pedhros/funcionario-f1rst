@@ -12,6 +12,7 @@ public class FuncionarioListResponse {
 	private UUID idFuncionario;
 	private String nomeCompleto;
 	private String designacao;
+	private String salario;
 	private String email;
 	private String telefone;
 	
@@ -25,6 +26,7 @@ public class FuncionarioListResponse {
 		this.idFuncionario = funcionario.getIdFuncionario();
 		this.nomeCompleto = funcionario.getNomeCompleto();
 		this.designacao = funcionario.getDesignacao();
+		this.salario = funcionario.getSalario();
 		this.email = funcionario.getEmail();
 		this.telefone = funcionario.getTelefone();
 	}
